@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boggle Board</title>
+</head>
+<body>
+    <div id="highest-score">Highest Score: 0</div>
+    <div id="times-played">Times Played: 0</div>
+    <div id="timer">Time Remaining: 60</div>
+    <div id="total-score">Total Score: 0</div>
+
+    <table>
+    {% for row in board %}
+    <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+
+    <div id="result-message"></div>
+    <!-- Guess Form -->
+    <form action="/submit_user_guess" method="POST">
+        <input type="text" name="user_guess" placeholder="Enter your guess">
+        <input type="submit" value="Submit Guess">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>console.log("Inline script running!");</script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+</body>
+</html>
