@@ -4,7 +4,6 @@ $(document).ready(function(){
     let timerId;
     let submittedWords = new Set();
 
-    // make sure everything matches here
     const $timer = $("#timer");
     const $form = $("form");
     const $resultMessage = $("#result-message");
