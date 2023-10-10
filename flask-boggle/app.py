@@ -20,7 +20,7 @@ def display_boggle_board():
     session.setdefault('times_played', 0)
     return render_template('boggle_board.html', board=generated_board)
 
-@app.route('/submit_user_guess', methods=['POST'])
+@app.route('/user_guess', methods=['POST']) #guess or choice api
 def submit_user_guess():
     """Handles submission of user's word guess.
     Validates if submitted word is on board and words.txt.
@@ -34,7 +34,7 @@ def submit_user_guess():
     result = boggle_game_instance.check_valid_word(current_board, user_guess.lower())
     return jsonify({'result': result})
 
-@app.route('/submit_final_score', methods=['POST'])
+@app.route('/final_score', methods=['POST']) #POST already tells you want it does
 def submit_final_score():
     """Handle the submission of the final score when the game ends.
     

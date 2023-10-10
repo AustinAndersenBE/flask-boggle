@@ -31,7 +31,7 @@ $(document).ready(function() {
     }
 
     function submitGuess(userGuess) {
-        axios.post('/submit_user_guess', { user_guess: userGuess })
+        axios.post('/user_guess', { user_guess: userGuess })
             .then(response => handleResponse(response, userGuess))
             .catch(error => handleError(error));
     }
@@ -87,7 +87,7 @@ $(document).ready(function() {
     }
 
     function submitFinalScore() {
-        axios.post('/submit_final_score', { final_score: gameState.totalScore })
+        axios.post('/final_score', { final_score: gameState.totalScore })
             .then(response => handleFinalScoreResponse(response))
             .catch(error => handleError(error));
     }
